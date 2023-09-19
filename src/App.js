@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React from 'react';
+import Home from './Home';
+import English from './English';
+import Biology from './Biology';
+import Chemistry from './Chemistry';
+import Computer from './Computer';
+import Physics from './Physics';
+import Genknowledge from './Genknowledge';
+import { Navigate, Route, Routes } from 'react-router-dom';
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+<>
+<Routes>
+<Route path='/' element={<Home/>}/>
+<Route path='/english' element={<English/>}/>
+<Route path='/biology' element={<Biology/>}/>
+<Route path='/chemistry' element={<Chemistry/>}/>
+<Route path='/computer' element={<Computer/>}/>
+<Route path='/physics' element={<Physics/>}/>
+<Route path='/genknowledege' element={<Genknowledge/>}/>
+<Route path='*' element={<Navigate to="/"/>}/>
+
+
+</Routes>
+</>
   );
-}
+};
 
 export default App;
+
